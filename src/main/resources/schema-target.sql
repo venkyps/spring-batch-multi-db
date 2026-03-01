@@ -3,9 +3,11 @@ CREATE SCHEMA IF NOT EXISTS target_schema;
 
 CREATE TABLE IF NOT EXISTS target_schema.customer (
     id UUID PRIMARY KEY,
-    first_name VARCHAR(255),
-    last_name VARCHAR(255),
-    email VARCHAR(255)
+    ref_no VARCHAR(50) NOT NULL,
+    status VARCHAR(50) NOT NULL,
+    host_status VARCHAR(50),
+    created_at TIMESTAMP,
+    target_timestamp TIMESTAMP
 );
 
 -- Delete existing data for repeatable demo

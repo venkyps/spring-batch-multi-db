@@ -5,13 +5,12 @@ import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
+import java.util.UUID;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.UuidGenerator;
-
-import java.util.UUID;
 
 @Data
 @Builder
@@ -26,11 +25,18 @@ public class CustomerTarget {
     @UuidGenerator
     private UUID id;
 
-    @Column(name = "first_name")
-    private String firstName;
+    @Column(name = "ref_no")
+    private String refNo;
 
-    @Column(name = "last_name")
-    private String lastName;
+    @Column(name = "status")
+    private String status;
 
-    private String email;
+    @Column(name = "host_status")
+    private String hostStatus;
+
+    @Column(name = "target_timestamp")
+    private java.time.LocalDateTime targetTimestamp;
+
+    @Column(name = "created_at")
+    private java.time.LocalDateTime createdAt;
 }

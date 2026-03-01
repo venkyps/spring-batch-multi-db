@@ -1,29 +1,52 @@
 package com.example.batch.model;
 
-import jakarta.persistence.*;
-import lombok.*;
-import org.hibernate.annotations.UuidGenerator;
-
 import java.util.UUID;
 
-@Data
-@Builder
-@NoArgsConstructor
-@AllArgsConstructor
-@Entity
-@Table(name = "customer", schema = "source_schema")
 public class CustomerSource {
 
-    @Id
-    @GeneratedValue
-    @UuidGenerator
     private UUID id;
+    private String refNo;
+    private String status;
 
-    @Column(name = "first_name")
-    private String firstName;
+    public CustomerSource() {
+    }
 
-    @Column(name = "last_name")
-    private String lastName;
+    public CustomerSource(UUID id, String refNo, String status) {
+        this.id = id;
+        this.refNo = refNo;
+        this.status = status;
+    }
 
-    private String email;
+    public UUID getId() {
+        return id;
+    }
+
+    public void setId(UUID id) {
+        this.id = id;
+    }
+
+    public String getRefNo() {
+        return refNo;
+    }
+
+    public void setRefNo(String refNo) {
+        this.refNo = refNo;
+    }
+
+    public String getStatus() {
+        return status;
+    }
+
+    public void setStatus(String status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "CustomerSource{" +
+                "id=" + id +
+                ", refNo='" + refNo + '\'' +
+                ", status='" + status + '\'' +
+                '}';
+    }
 }

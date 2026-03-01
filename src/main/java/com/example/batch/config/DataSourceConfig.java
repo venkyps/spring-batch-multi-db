@@ -21,7 +21,10 @@ public class DataSourceConfig {
     @Bean
     @Primary
     public HikariDataSource batchDataSource(DataSourceProperties properties) {
-        return properties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
+        return properties
+                .initializeDataSourceBuilder()
+                .type(HikariDataSource.class)
+                .build();
     }
 
     // Source Schema DataSource
@@ -33,7 +36,10 @@ public class DataSourceConfig {
 
     @Bean
     public HikariDataSource sourceDataSource(DataSourceProperties sourceDataSourceProperties) {
-        return sourceDataSourceProperties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
+        return sourceDataSourceProperties
+                .initializeDataSourceBuilder()
+                .type(HikariDataSource.class)
+                .build();
     }
 
     // Target Schema DataSource
@@ -45,6 +51,9 @@ public class DataSourceConfig {
 
     @Bean
     public HikariDataSource targetDataSource(DataSourceProperties targetDataSourceProperties) {
-        return targetDataSourceProperties.initializeDataSourceBuilder().type(HikariDataSource.class).build();
+        return targetDataSourceProperties
+                .initializeDataSourceBuilder()
+                .type(HikariDataSource.class)
+                .build();
     }
 }
